@@ -88,7 +88,7 @@ Header {
     }
   }
 }
-
+ 
 .main {
   height: 100%;
   background-color: #0b0912;
@@ -108,6 +108,7 @@ Header {
     .about {
       width: 60%;
       height: 100%;
+      /* background-color: #0b0912; */
       background-color: #100d18;
       border-radius: 20px;
       /* font-family: var(--main-font); */
@@ -121,17 +122,36 @@ Header {
       h2 {
         font-size: 40px;
         font-weight: 600;
-      }
+      } 
       .me {
         font-size: 20px;
         text-transform: capitalize;
         font-family: var(--font-name);
         font-weight: bold;
-        color: var(--txt);
+        color: var(--txt);span{
+          position: relative;
+        }
+        .span::before{
+          color: #089c3e;
+          content: "Front-end Deverloper.";
+          animation: word 5s infinite;
+        }
+        .span::after{
+          content: " ";
+          height: 100%;
+          /* width: 0; */
+          width: calc(100%+8px);
+          background-color: #100d18;
+          position: absolute;
+          right: -8px;
+          border-left: 2px solid #22c55e;
+          animation: cursor .85s infinite,typing 25s steps(14) infinite;
+        }
       }
       p {
         font-size: 15px;
         color: var(--secondary-txt);
+
       }
       .btn {
         width: 100%;
@@ -236,14 +256,15 @@ Header {
       }
     }
   }
+  
    #about {
     scroll-margin-top: 150px;
 }
-  .about {
-    width: 80%;
-    height: 500px;
-    border: 1px solid var(--border);
-    border-radius: 20px;
+.about {
+  width: 80%;
+  height: 500px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
     display: flex;
     flex-direction: column;
     padding-top: 20px;
@@ -264,6 +285,7 @@ Header {
       }
     }
     .section {
+      
       width: 100%;
       height: 90%;
       display: flex;
@@ -634,9 +656,29 @@ Header {
         transform: scale(1.02);
     }
   }
-  
-
 }
+@keyframes cursor {
+     to{
+       border-left:2px solid var(--bg);
+     
+    }
+    
+}
+@keyframes word {
+  0%,100%{
+    content: "Front-end Deverloper.";
+  }
+  
+}
+@keyframes typing {
+        10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+            width: 0;
+        }
+        0%,5%,20%,25%,40%,45%,60%,65%,80%,85%,100%{
+            width: calc(100% + 8px);
+        }
+        
+    }
 footer{
     height: 280px;
     background-color: #100D18;
