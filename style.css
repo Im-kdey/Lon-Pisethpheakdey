@@ -26,6 +26,7 @@
 }
 html{
     scroll-behavior: smooth;
+    position: absolute;
    
 }
 Header {
@@ -88,7 +89,6 @@ Header {
     }
   }
 }
- 
 .main {
   height: 100%;
   background-color: #0b0912;
